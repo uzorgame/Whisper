@@ -1,0 +1,16 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.spacer {
+  flex: 1;
+  min-width: var(--space-4);
+}
+
+.note {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+}

@@ -1,0 +1,139 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border: var(--stroke);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  padding: 9px var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+  text-align: left;
+  transition:
+    border-color var(--duration-fast) var(--ease),
+    background var(--duration-fast) var(--ease);
+}
+
+.trigger:hover:not(:disabled) {
+  background: var(--color-surface-alt);
+}
+
+.triggerOpen {
+  border-color: var(--color-primary);
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+}
+
+.chevron {
+  flex: none;
+  color: var(--color-ink-muted);
+  transition: transform var(--duration-fast) var(--ease);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.hint {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------- listbox */
+
+.listbox {
+  position: fixed;
+  z-index: 200;
+  overflow-y: auto;
+  padding: var(--space-2);
+  background: var(--color-paper);
+  border: var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-overlay);
+  animation: reveal var(--duration-fast) var(--ease);
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink-secondary);
+  text-align: left;
+  transition:
+    background var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease);
+}
+
+.optionActive {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.optionSelected {
+  background: var(--color-primary);
+  color: var(--color-on-ink);
+}
+
+.optionSelected.optionActive {
+  background: var(--color-primary-hover);
+}
+
+.optionDisabled {
+  color: var(--color-border-muted);
+  cursor: not-allowed;
+}
+
+.optionDisabled:hover {
+  background: transparent;
+}
+
+.optionMeta {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  opacity: 0.7;
+}
+
+.optionDisabled .optionMeta {
+  opacity: 1;
+  text-transform: none;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listbox {
+    animation: none;
+  }
+}

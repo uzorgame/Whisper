@@ -1,0 +1,27 @@
+.track {
+  height: 8px;
+  border: var(--stroke-muted);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width var(--duration) var(--ease);
+}
+
+.indeterminate .fill {
+  width: 32%;
+  animation: sweep 1.15s var(--ease) infinite;
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(330%);
+  }
+}

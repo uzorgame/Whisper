@@ -1,0 +1,16 @@
+.alert {
+  display: flex;
+  gap: var(--space-3);
+  border: var(--stroke-width) solid var(--color-danger);
+  border-radius: var(--radius);
+  background: var(--color-danger-tint);
+  padding: var(--space-4);
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  line-height: var(--leading-tight);
+}
+
+.icon {
+  flex: none;
+  margin-top: 1px;
+}

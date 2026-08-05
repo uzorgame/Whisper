@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Design tokens — measured from zapier.com (computed styles, not eyeballed).
+   Every visual decision in the app resolves to one of these variables.
+   ========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------- brand */
+  --color-primary: #ff4f00; /* zapier orange, rgb(255 79 0) */
+  --color-primary-hover: #e64700;
+  --color-primary-tint: #fff3e6;
+
+  /* ------------------------------------------------------------- neutrals */
+  --color-ink: #201515; /* headings, dark sections */
+  --color-ink-secondary: #36342e; /* body copy, hairline borders */
+  --color-ink-muted: #6b665c;
+  --color-paper: #fffefb; /* page background */
+  --color-surface: #f8f4f0; /* raised/inset panels */
+  --color-surface-alt: #fffdf9;
+  --color-white: #ffffff;
+
+  /* --------------------------------------------------------------- lines */
+  --color-border: #36342e; /* the dominant border on zapier.com */
+  --color-border-subtle: #eceae3;
+  --color-border-muted: #c5c0b1;
+
+  /* -------------------------------------------------------------- accents */
+  --color-accent-purple: #503ebd;
+  --color-accent-green: #32ae88;
+  --color-accent-blue: #cddcf2;
+  --color-danger: #c0341d;
+  --color-danger-tint: #fdf0ed;
+
+  /* ---------------------------------------------------- inverted surfaces */
+  --color-on-ink: #fffefb;
+  --color-on-ink-muted: rgba(255, 254, 251, 0.62);
+
+  /* --------------------------------------------------------------- radius
+     zapier's house radius is 4px (48 occurrences), 2px and 8px are the
+     secondary steps. Squared-off, but never a hard 0. */
+  --radius-sm: 2px;
+  --radius: 4px;
+  --radius-lg: 8px;
+
+  /* --------------------------------------------------------------- stroke
+     hairline dark outlines instead of shadows — the core zapier signature */
+  --stroke-width: 1px;
+  --stroke: var(--stroke-width) solid var(--color-border);
+  --stroke-subtle: var(--stroke-width) solid var(--color-border-subtle);
+  --stroke-muted: var(--stroke-width) solid var(--color-border-muted);
+
+  /* -------------------------------------------------------------- shadows
+     used sparingly, only for genuinely floating layers */
+  --shadow-overlay: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --focus-ring: 0 0 0 3px rgba(255, 79, 0, 0.34);
+
+  /* ------------------------------------------------------------ typography */
+  --font-sans:
+    'Inter Variable', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    system-ui, sans-serif;
+  /* zapier uses Degular Display here — proprietary, so Inter carries the
+     display role with tighter tracking and leading */
+  --font-display: var(--font-sans);
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 21px;
+
+  --display-sm: 32px;
+  --display-md: 40px;
+  --display-lg: 56px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  --leading-display: 0.92; /* zapier: 57.6/64 and 36/40 */
+  --leading-tight: 1.25;
+  --leading-body: 1.55;
+
+  --tracking-display: -0.025em;
+  --tracking-tight: -0.01em;
+  --tracking-wide: 0.06em;
+
+  /* --------------------------------------------------------------- space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px; /* zapier's section rhythm */
+
+  /* -------------------------------------------------------------- layout */
+  --container-max: 1280px;
+  --container-gutter: var(--space-6);
+  --header-height: 56px;
+
+  /* --------------------------------------------------------------- motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration: 180ms;
+
+  color-scheme: light;
+}

@@ -1,0 +1,102 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-on-ink);
+}
+
+.subtitle {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-on-ink-muted);
+}
+
+.metrics {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.metric {
+  text-align: right;
+}
+
+.metricValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-on-ink);
+}
+
+.metricLabel {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-on-ink-muted);
+}
+
+/* ------------------------------------------------------------- transcript */
+
+.body {
+  max-height: 560px;
+  overflow-y: auto;
+  padding: var(--space-4) 0;
+}
+
+.segment {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-6);
+  transition: background var(--duration-fast) var(--ease);
+}
+
+.segment:hover {
+  background: var(--color-surface);
+}
+
+.time {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  user-select: none;
+}
+
+.text {
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--color-ink);
+}
+
+/* ----------------------------------------------------------------- footer */
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.wordCount {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+}
+
+@media (max-width: 560px) {
+  .segment {
+    padding-inline: var(--space-4);
+  }
+  .metrics {
+    gap: var(--space-4);
+  }
+}

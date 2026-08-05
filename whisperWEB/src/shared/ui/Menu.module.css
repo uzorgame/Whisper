@@ -1,0 +1,71 @@
+.anchor {
+  position: relative;
+  display: inline-flex;
+}
+
+.panel {
+  position: fixed;
+  z-index: 200;
+  overflow-y: auto;
+  padding: var(--space-2);
+  background: var(--color-paper);
+  border: var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-overlay);
+  animation: reveal var(--duration-fast) var(--ease);
+}
+
+.heading {
+  padding: var(--space-2) var(--space-3) var(--space-1);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink-secondary);
+  text-align: left;
+  transition: background var(--duration-fast) var(--ease);
+}
+
+.item:hover:not(:disabled) {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.item:disabled {
+  opacity: 0.5;
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  color: var(--color-ink-muted);
+}
+
+.item:hover:not(:disabled) .icon {
+  color: var(--color-primary);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}
