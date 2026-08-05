@@ -1,4 +1,4 @@
-# Whisper Local
+# Whisper
 
 Speech transcription that runs entirely inside the browser. OpenAI's Whisper
 executes on the visitor's own GPU through WebGPU — there is no upload step, no
