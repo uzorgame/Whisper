@@ -5,6 +5,9 @@ export interface LanguageOption {
 
 export const AUTO_LANGUAGE = 'auto'
 
+/** Naming a language beats detection, and English is the safest opening guess. */
+export const DEFAULT_LANGUAGE = 'en'
+
 /** A short list up front; Whisper itself supports ~99 languages. */
 export const LANGUAGES: LanguageOption[] = [
   { code: AUTO_LANGUAGE, label: 'Auto-detect' },

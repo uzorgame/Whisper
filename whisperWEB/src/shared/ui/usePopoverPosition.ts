@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState, type RefObject } from 'react'
 
 export interface PopoverPlacement {
-  top: number
+  /** set when the panel opens downward */
+  top?: number
+  /** set when the panel opens upward — anchoring by the bottom edge keeps the
+   *  panel glued to the trigger no matter how short its content turns out */
+  bottom?: number
   left: number
   minWidth: number
   maxHeight: number
-  direction: 'down' | 'up'
 }
 
 interface Options {
@@ -39,11 +42,8 @@ export function usePopoverPosition(
     const spaceBelow = window.innerHeight - rect.bottom - gap - VIEWPORT_MARGIN
     const spaceAbove = rect.top - gap - VIEWPORT_MARGIN
 
-    const openUp = spaceBelow < Math.min(preferredHeight, 180) && spaceAbove > spaceBelow
-    const maxHeight = Math.max(
-      120,
-      Math.min(preferredHeight, openUp ? spaceAbove : spaceBelow),
-    )
+    const openUp =
+      spaceBelow < Math.min(preferredHeight, 180) && spaceAbove > spaceBelow
 
     const width = matchWidth ? rect.width : Math.max(rect.width, 200)
     let left = alignEnd ? rect.right - width : rect.left
@@ -53,11 +53,15 @@ export function usePopoverPosition(
     )
 
     setPlacement({
-      top: openUp ? rect.top - gap - maxHeight : rect.bottom + gap,
+      ...(openUp
+        ? { bottom: window.innerHeight - rect.top + gap }
+        : { top: rect.bottom + gap }),
       left,
       minWidth: width,
-      maxHeight,
-      direction: openUp ? 'up' : 'down',
+      maxHeight: Math.max(
+        120,
+        Math.min(preferredHeight, openUp ? spaceAbove : spaceBelow),
+      ),
     })
   }, [anchorRef, alignEnd, gap, matchWidth, preferredHeight])
 

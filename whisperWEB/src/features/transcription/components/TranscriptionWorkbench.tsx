@@ -5,7 +5,7 @@ import { detectDefaultDevice } from '../../../shared/lib/device'
 import { RecordingModal } from '../../recording/components/RecordingModal'
 import { useMediaFile } from '../hooks/useMediaFile'
 import { useTranscriber } from '../hooks/useTranscriber'
-import { AUTO_LANGUAGE } from '../model/languages'
+import { DEFAULT_LANGUAGE } from '../model/languages'
 import { DEFAULT_MODEL, bestModelFor } from '../model/models'
 import type { ComputeDevice, ModelId } from '../model/types'
 import { EngineControls } from './EngineControls'
@@ -21,9 +21,12 @@ import styles from './TranscriptionWorkbench.module.css'
  * the recording feature.
  */
 export function TranscriptionWorkbench() {
-  const [model, setModel] = useState<ModelId>(DEFAULT_MODEL)
-  const [language, setLanguage] = useState<string>(AUTO_LANGUAGE)
   const [device, setDevice] = useState<ComputeDevice>(detectDefaultDevice)
+  // the default model needs a GPU, so on a CPU-only machine it steps down
+  const [model, setModel] = useState<ModelId>(() =>
+    bestModelFor(DEFAULT_MODEL, detectDefaultDevice() === 'webgpu'),
+  )
+  const [language, setLanguage] = useState<string>(DEFAULT_LANGUAGE)
   const [isRecorderOpen, setRecorderOpen] = useState(false)
 
   const media = useMediaFile()

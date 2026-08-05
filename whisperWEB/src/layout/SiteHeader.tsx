@@ -16,7 +16,7 @@ export function SiteHeader() {
           </div>
 
           <nav className={styles.nav}>
-            <Tag tone={webgpu ? 'tint' : 'neutral'}>
+            <Tag tone={webgpu ? 'primary' : 'neutral'}>
               {webgpu ? 'WebGPU ready' : 'CPU mode'}
             </Tag>
           </nav>

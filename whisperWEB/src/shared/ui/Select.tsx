@@ -165,12 +165,7 @@ export function Select<T extends string>({
             role="listbox"
             aria-labelledby={labelId}
             data-lenis-prevent
-            style={{
-              top: placement.top,
-              left: placement.left,
-              minWidth: placement.minWidth,
-              maxHeight: placement.maxHeight,
-            }}
+            style={placement}
             onKeyDown={handleKeyDown}
           >
             {options.map((option, index) => (

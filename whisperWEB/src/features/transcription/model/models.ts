@@ -39,7 +39,8 @@ export const WHISPER_MODELS: WhisperModelInfo[] = [
   },
 ]
 
-export const DEFAULT_MODEL: ModelId = 'onnx-community/whisper-base'
+/** The most accurate model is also the fastest, so it is the sensible default. */
+export const DEFAULT_MODEL: ModelId = 'onnx-community/whisper-large-v3-turbo'
 
 /** Falls back to the best model the given backend can actually run. */
 export function bestModelFor(

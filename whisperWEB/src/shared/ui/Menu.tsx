@@ -59,12 +59,7 @@ export function Menu({ trigger, heading, children }: MenuProps) {
             className={styles.panel}
             role="menu"
             data-lenis-prevent
-            style={{
-              top: placement.top,
-              left: placement.left,
-              minWidth: placement.minWidth,
-              maxHeight: placement.maxHeight,
-            }}
+            style={placement}
           >
             {heading && <div className={styles.heading}>{heading}</div>}
             {children({ close: () => setOpen(false) })}

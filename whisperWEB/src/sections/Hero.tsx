@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.eyebrow}>
-        <Tag tone="tint">Runs entirely in your browser</Tag>
+        <Tag tone="primary">Runs entirely in your browser</Tag>
       </div>
 
       <h1 className={styles.title}>
