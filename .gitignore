@@ -6,3 +6,4 @@ dist/
 
 # transient test assets
 whisperWEB/public/__*
+whisperWEB/.claude/
