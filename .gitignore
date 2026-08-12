@@ -7,3 +7,6 @@ dist/
 # transient test assets
 whisperWEB/public/__*
 whisperWEB/.claude/
+
+# Serena code-intelligence cache (project.yml is committed, cache is not)
+**/.serena/cache/
