@@ -1,15 +1,15 @@
-# Whisper
+# Scriptor
 
 Speech transcription that runs entirely inside the browser. OpenAI's Whisper
 executes on the visitor's own GPU through WebGPU — there is no upload step, no
 queue and no backend, because there is no server at all.
 
-**Live:** https://uz-or.com/Whisper/
+**Live:** https://uz-or.com/scriptor/
 
 ```
-whisper/
-├─ whisperWEB/   Vite + React + TypeScript — the web app
-└─ whisperWIN/   reserved for a Tauri desktop build
+scriptor/
+├─ scriptorWEB/   Vite + React + TypeScript — the web app
+└─ scriptorWIN/   reserved for a Tauri desktop build
 ```
 
 ## What it does
@@ -65,7 +65,7 @@ already contain those nodes, so no rewrite is attempted and the session builds.
 ## Running locally
 
 ```bash
-cd whisperWEB
+cd scriptorWEB
 npm install
 npm run dev
 ```

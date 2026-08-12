@@ -5,8 +5,8 @@ dist/
 .vite/
 
 # transient test assets
-whisperWEB/public/__*
-whisperWEB/.claude/
+scriptorWEB/public/__*
+scriptorWEB/.claude/
 
 # Serena code-intelligence cache (project.yml is committed, cache is not)
 **/.serena/cache/

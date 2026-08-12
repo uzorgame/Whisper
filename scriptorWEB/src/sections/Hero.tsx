@@ -14,7 +14,7 @@ export function Hero() {
       </h1>
 
       <p className={styles.lead}>
-        Whisper runs on your own GPU through WebGPU. There is no upload, no
+        Scriptor runs on your own GPU through WebGPU. There is no upload, no
         queue and no server — because there is no backend at all.
       </p>
 

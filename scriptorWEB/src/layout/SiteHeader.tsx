@@ -12,7 +12,7 @@ export function SiteHeader() {
         <div className={styles.inner}>
           <div className={styles.brand}>
             <span className={styles.mark} aria-hidden="true" />
-            <span className={styles.wordmark}>Whisper</span>
+            <span className={styles.wordmark}>Scriptor</span>
           </div>
 
           <nav className={styles.nav}>
